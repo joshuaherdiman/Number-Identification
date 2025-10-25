@@ -5,12 +5,12 @@ from requirements.txt import *
 st.title("Number Identifier")
 st.text("Built By Joshua")
 
-number_classification_model = load_learner("10-AM-Single-Number-Identification-(1).pkl")
-
 def number_identifier(file_name):
     file_parts = str(file_name).split("/")
     folder_name = file_parts[-2]
-    return folder_name
+    return folder_name[-1]
+
+number_classification_model = load_learner("10-AM-Single-Number-Identification-(3).pkl")
 
 def predict(image):
     img = PILImage.creat(image)
@@ -22,6 +22,6 @@ uploaded_file = st.file_uploader("Choose an image to upload...", type=["jpg", "p
 if uploaded_file is not None:
     st.image(uploaded_file, caption="Uploaded Image", use_container_width=True)
     prediction = predict(uploaded_file)
-    st.subheader(f"Predicted Breed: {prediction}")
+    st.subheader(f"Predicted number: {prediction}")
 
 st.text("Built with Streamlit and FastAI.")
