@@ -5,7 +5,7 @@ import streamlit as st
 st.title("Number Identifier")
 st.text("Built By Joshua")
 
-def number_identifier(file_name):
+def number_label(file_name):
     file_parts = str(file_name).split("/")
     folder_name = file_parts[-2]
     return folder_name[-1]
