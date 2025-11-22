@@ -5,9 +5,11 @@ import streamlit as st
 st.title("Number Identifier")
 st.text("Built By Joshua")
 
-def number_label(file_name):
-    file_parts = str(file_name).split("/")
-    folder_name = file_parts[-2]
+def number_label(file_path):
+    file_parts = str(file_path).split("/")
+    #print(file_parts)
+    folder_name = file_parts[-2] # Sample0
+
     return folder_name[-1]
 
 number_classification_model = load_learner("single_digit_model.pkl")
