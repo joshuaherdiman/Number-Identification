@@ -15,7 +15,7 @@ def number_label(file_path):
 number_classification_model = load_learner("single_digit_model.pkl")
 
 def predict(image):
-    img = PILImage.creat(image)
+    img = PILImage.create(image)
     pred_class, pred_idx, outputs = number_classification_model.predict(img)
     return pred_class
 
